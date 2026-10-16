@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khutba Bank</title>
+  <meta name="description" content="Bilingual (Bosnian / English) khutbas for the Bošnjačka Islamska Zajednica Erie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Khutba Bank — Bošnjačka Islamska Zajednica Erie</h1>
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <a href="#all" role="tab" data-view="all">All Khutbas</a>
+        <a href="#style" role="tab" data-view="style">Style Guide</a>
+        <a href="#sources" role="tab" data-view="sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- All Khutbas -->
+    <section id="view-all" class="view" aria-labelledby="tab-all">
+      <div class="controls">
+        <label class="search">
+          <span class="visually-hidden">Search khutbas</span>
+          <input id="search" type="search" placeholder="Search by title, tag, or any word (Bosnian or English)" autocomplete="off">
+        </label>
+        <div id="tag-filter" class="chips" aria-label="Filter by tag"></div>
+        <p id="count" class="count" aria-live="polite"></p>
+      </div>
+      <div id="list" class="list"></div>
+    </section>
+
+    <!-- Style Guide -->
+    <section id="view-style" class="view prose" hidden>
+      <h2>Style Guide</h2>
+      <p>Every khutba in this bank follows these house rules. They exist so that any imam or volunteer can pick up a khutba and deliver it with confidence.</p>
+      <ol class="rules">
+        <li><strong>Bilingual only.</strong> Every content row has a Bosnian cell and an English cell, side by side.</li>
+        <li><strong>No fabricated hadith or Qur'anic verses.</strong> If a citation cannot be verified, it is left out.</li>
+        <li><strong>Qur'anic Arabic is sourced.</strong> Arabic text for every cited verse comes from <a href="https://quran.com" target="_blank" rel="noopener">quran.com</a> or <a href="https://tanzil.net" target="_blank" rel="noopener">tanzil.net</a>, and every verse citation links to its quran.com page.</li>
+        <li><strong>Hadith name their collection.</strong> Every hadith names its collection (Bukhari, Muslim, Tirmidhi, and so on), checked against <a href="https://sunnah.com" target="_blank" rel="noopener">sunnah.com</a>.</li>
+        <li><strong>Length.</strong> Combined delivery does not exceed 15 minutes, roughly 1,800 words in total across both languages.</li>
+        <li><strong>Tone.</strong> Emotionally grounded, spiritually reflective, warm flowing prose.</li>
+        <li><strong>No em dashes</strong> in the written khutba text. Use commas, full stops, or a new sentence instead.</li>
+        <li><strong>Sources at the bottom.</strong> All sources are cited at the end of each khutba with working links.</li>
+      </ol>
+      <h3>Layout of a khutba</h3>
+      <ul>
+        <li>Arabic verses sit in their own full-width row, right-aligned, directly above the Bosnian and English row that explains them.</li>
+        <li>Khutbas adapted from another source carry the label <em>Adapted</em> and link to the original page.</li>
+        <li>The copy buttons produce plain text, ready to paste into a document or a phone for the minbar.</li>
+      </ul>
+    </section>
+
+    <!-- Sources -->
+    <section id="view-sources" class="view prose" hidden>
+      <h2>Sources</h2>
+      <p>With gratitude to the following resources. Khutbas adapted from them are translated and reworked for our community, and each one links back to its original.</p>
+      <dl class="sources">
+        <dt><a href="https://www.khutbahbank.org.uk/v1/very_short_khutbahs.htm" target="_blank" rel="noopener">Khutbah Bank: Very Short Khutbahs</a></dt>
+        <dd>English originals of the short khutbas that several entries here are adapted from.</dd>
+        <dt><a href="https://www.khutbahbank.org.uk/v1/all_khutbahs_a_to_z.htm" target="_blank" rel="noopener">Khutbah Bank: Full A to Z Index</a></dt>
+        <dd>The complete index of khutbahbank.org.uk.</dd>
+        <dt><a href="https://quran.com" target="_blank" rel="noopener">Quran.com</a> and <a href="https://tanzil.net" target="_blank" rel="noopener">Tanzil.net</a></dt>
+        <dd>Qur'anic Arabic text (Uthmani script) and English translation. Every verse cited on this site links to its page on quran.com.</dd>
+        <dt><a href="https://sunnah.com" target="_blank" rel="noopener">Sunnah.com</a></dt>
+        <dd>Hadith reference. Every hadith quoted here names its collection.</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Bošnjačka Islamska Zajednica Erie</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
+
+  <script src="khutbas.js"></script>
+  <script>
+  (function () {
+    "use strict";
+
+    var KHUTBAS = (window.KHUTBAS || []).slice().sort(function (a, b) {
+      return (b.date || "").localeCompare(a.date || "");
+    });
+    var state = { query: "", tag: null };
+
+    var $list = document.getElementById("list");
+    var $search = document.getElementById("search");
+    var $tagFilter = document.getElementById("tag-filter");
+    var $count = document.getElementById("count");
+    var $toast = document.getElementById("toast");
+
+    // ---------- helpers ----------
+    function el(tag, attrs, children) {
+      var node = document.createElement(tag);
+      if (attrs) Object.keys(attrs).forEach(function (k) {
+        if (k === "text") node.textContent = attrs[k];
+        else if (k === "class") node.className = attrs[k];
+        else node.setAttribute(k, attrs[k]);
+      });
+      (children || []).forEach(function (c) { if (c) node.appendChild(c); });
+      return node;
+    }
+    function link(href, text, cls) {
+      return el("a", { href: href, target: "_blank", rel: "noopener", text: text, class: cls || "" });
+    }
+    function normalize(s) {
+      return (s || "").toLocaleLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    }
+    function haystack(k) {
+      var parts = [k.title_bs, k.title_en, (k.tags || []).join(" ")];
+      (k.rows || []).forEach(function (r) { parts.push(r.bs, r.en, r.arabic_ref); });
+      return normalize(parts.join(" \n "));
+    }
+    KHUTBAS.forEach(function (k) { k._hay = haystack(k); });
+
+    function formatDate(iso) {
+      if (!iso) return "";
+      var d = new Date(iso + "T12:00:00");
+      return isNaN(d) ? iso : d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+    }
+
+    // Collect every citation in a khutba: Qur'an verses, extra references, and the adapted source.
+    function citations(k) {
+      var out = [], seen = {};
+      (k.rows || []).forEach(function (r) {
+        if (r.arabic_ref && r.arabic_url && !seen[r.arabic_url]) {
+          seen[r.arabic_url] = 1;
+          out.push({ label: "Qur'an, " + r.arabic_ref, url: r.arabic_url });
+        }
+      });
+      (k.references || []).forEach(function (ref) {
+        if (!seen[ref.url]) { seen[ref.url] = 1; out.push(ref); }
+      });
+      if (k.source_url) out.push({ label: "Adapted from Khutbah Bank: " + k.title_en, url: k.source_url });
+      return out;
+    }
+
+    // ---------- plain-text copy ----------
+    function plainText(k, mode) {
+      var lines = [];
+      if (mode === "bs" || mode === "both") lines.push(k.title_bs);
+      if (mode === "en" || mode === "both") lines.push(k.title_en);
+      lines.push("");
+      (k.rows || []).forEach(function (r) {
+        if (r.arabic) {
+          lines.push(r.arabic);
+          if (r.arabic_ref) lines.push("(" + r.arabic_ref + ")");
+          lines.push("");
+        }
+        if ((mode === "bs" || mode === "both") && r.bs) lines.push(r.bs, "");
+        if ((mode === "en" || mode === "both") && r.en) lines.push(r.en, "");
+      });
+      var cites = citations(k);
+      if (cites.length) {
+        lines.push(mode === "bs" ? "Izvori:" : mode === "en" ? "Sources:" : "Izvori / Sources:");
+        cites.forEach(function (c) { lines.push("- " + c.label + ": " + c.url); });
+      }
+      return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise(function (resolve, reject) {
+        var ta = el("textarea", { readonly: "", style: "position:fixed;top:-1000px;opacity:0" });
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy") ? resolve() : reject(); } catch (e) { reject(e); }
+        document.body.removeChild(ta);
+      });
+    }
+
+    var toastTimer;
+    function toast(msg) {
+      $toast.textContent = msg;
+      $toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { $toast.classList.remove("show"); }, 1600);
+    }
+
+    // ---------- rendering ----------
+    function tagChip(tag, active) {
+      var b = el("button", { type: "button", class: "chip" + (active ? " active" : ""), "aria-pressed": active ? "true" : "false", text: "#" + tag });
+      b.addEventListener("click", function () {
+        state.tag = state.tag === tag ? null : tag;
+        render();
+      });
+      return b;
+    }
+
+    function renderTagFilter() {
+      var counts = {};
+      KHUTBAS.forEach(function (k) { (k.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; }); });
+      $tagFilter.textContent = "";
+      Object.keys(counts).sort().forEach(function (t) { $tagFilter.appendChild(tagChip(t, state.tag === t)); });
+      if (state.tag) {
+        var clear = el("button", { type: "button", class: "chip clear", text: "Clear filter" });
+        clear.addEventListener("click", function () { state.tag = null; render(); });
+        $tagFilter.appendChild(clear);
+      }
+    }
+
+    function card(k) {
+      var meta = el("p", { class: "meta" }, [
+        el("time", { datetime: k.date, text: formatDate(k.date) }),
+        el("span", { class: "dot", text: "·", "aria-hidden": "true" }),
+        k.source_url ? link(k.source_url, k.source, "source") : el("span", { class: "source", text: k.source })
+      ]);
+
+      var tags = el("div", { class: "chips" });
+      (k.tags || []).forEach(function (t) { tags.appendChild(tagChip(t, state.tag === t)); });
+
+      var actions = el("div", { class: "actions" });
+      [["bs", "Copy Bosnian"], ["en", "Copy English"], ["both", "Copy Both"]].forEach(function (pair) {
+        var b = el("button", { type: "button", class: "btn", text: pair[1] });
+        b.addEventListener("click", function () {
+          copyText(plainText(k, pair[0])).then(function () { toast("Copied!"); }, function () { toast("Copy failed"); });
+        });
+        actions.appendChild(b);
+      });
+
+      var tbody = el("tbody");
+      (k.rows || []).forEach(function (r) {
+        if (r.arabic) {
+          var ar = el("td", { colspan: "2", class: "arabic", lang: "ar", dir: "rtl" }, [
+            el("p", { class: "ayah", text: r.arabic }),
+            r.arabic_url ? link(r.arabic_url, r.arabic_ref || "quran.com", "ayah-ref") : el("span", { class: "ayah-ref", text: r.arabic_ref })
+          ]);
+          ar.lastChild.setAttribute("dir", "ltr");
+          ar.lastChild.setAttribute("lang", "en");
+          tbody.appendChild(el("tr", { class: "arabic-row" }, [ar]));
+        }
+        if (r.bs || r.en) {
+          tbody.appendChild(el("tr", null, [
+            el("td", { lang: "bs", "data-label": "Bosanski", text: r.bs || "" }),
+            el("td", { lang: "en", "data-label": "English", text: r.en || "" })
+          ]));
+        }
+      });
+      var table = el("table", { class: "khutba-table" }, [
+        el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Bosanski" }), el("th", { scope: "col", text: "English" })])]),
+        tbody
+      ]);
+
+      var cites = citations(k);
+      var srcList = el("ol", { class: "cites" });
+      cites.forEach(function (c) { srcList.appendChild(el("li", null, [link(c.url, c.label)])); });
+
+      return el("article", { class: "card", id: k.id }, [
+        el("header", { class: "card-head" }, [
+          el("h2", { lang: "bs", text: k.title_bs }),
+          el("p", { class: "title-en", lang: "en", text: k.title_en }),
+          meta,
+          tags,
+          actions
+        ]),
+        el("div", { class: "table-wrap" }, [table]),
+        cites.length ? el("footer", { class: "card-sources" }, [el("h3", { text: "Izvori / Sources" }), srcList]) : null
+      ]);
+    }
+
+    function render() {
+      var q = normalize(state.query.trim());
+      var terms = q ? q.split(/\s+/) : [];
+      var shown = KHUTBAS.filter(function (k) {
+        if (state.tag && (k.tags || []).indexOf(state.tag) === -1) return false;
+        return terms.every(function (t) { return k._hay.indexOf(t) !== -1; });
+      });
+
+      renderTagFilter();
+      $count.textContent = "Showing " + shown.length + " of " + KHUTBAS.length;
+      $list.textContent = "";
+      if (!shown.length) {
+        $list.appendChild(el("p", { class: "empty", text: "No khutbas match your search." }));
+      }
+      shown.forEach(function (k) { $list.appendChild(card(k)); });
+    }
+
+    // ---------- tabs ----------
+    function showView() {
+      var view = (location.hash || "#all").slice(1);
+      if (["all", "style", "sources"].indexOf(view) === -1) {
+        // A hash pointing at a khutba id opens the list and scrolls to it.
+        var target = document.getElementById(view);
+        view = "all";
+        if (target) setTimeout(function () { target.scrollIntoView(); }, 0);
+      }
+      document.querySelectorAll(".view").forEach(function (s) { s.hidden = s.id !== "view-" + view; });
+      document.querySelectorAll(".tabs a").forEach(function (a) {
+        var on = a.dataset.view === view;
+        a.classList.toggle("active", on);
+        a.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+
+    $search.addEventListener("input", function () { state.query = $search.value; render(); });
+    window.addEventListener("hashchange", showView);
+    render();
+    showView();
+  })();
+  </script>
+</body>
+</html>
