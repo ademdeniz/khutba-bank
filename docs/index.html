@@ -45,7 +45,7 @@
         <li><strong>No fabricated hadith or Qur'anic verses.</strong> If a citation cannot be verified, it is left out.</li>
         <li><strong>Qur'anic Arabic is sourced.</strong> Arabic text for every cited verse comes from <a href="https://quran.com" target="_blank" rel="noopener">quran.com</a> or <a href="https://tanzil.net" target="_blank" rel="noopener">tanzil.net</a>, and every verse citation links to its quran.com page.</li>
         <li><strong>Hadith name their collection.</strong> Every hadith names its collection (Bukhari, Muslim, Tirmidhi, and so on), checked against <a href="https://sunnah.com" target="_blank" rel="noopener">sunnah.com</a>.</li>
-        <li><strong>Length.</strong> Combined delivery does not exceed 15 minutes, roughly 1,800 words in total across both languages.</li>
+        <li><strong>Keep it short.</strong> Reading both languages aloud, Bosnian and English together, takes 10 to 15 minutes at most. That is roughly 1,300 to 1,800 words in total. Each khutba shows its estimated reading time.</li>
         <li><strong>Tone.</strong> Emotionally grounded, spiritually reflective, warm flowing prose.</li>
         <li><strong>No em dashes</strong> in the written khutba text. Use commas, full stops, or a new sentence instead.</li>
         <li><strong>Sources at the bottom.</strong> All sources are cited at the end of each khutba with working links.</li>
@@ -120,6 +120,16 @@
       return normalize(parts.join(" \n "));
     }
     KHUTBAS.forEach(function (k) { k._hay = haystack(k); });
+
+    // Spoken estimate for both languages: ~120 words per minute plus ~20 seconds per recited ayah.
+    function readingMinutes(k) {
+      var words = 0, ayat = 0;
+      (k.rows || []).forEach(function (r) {
+        words += ((r.bs || "") + " " + (r.en || "")).split(/\s+/).filter(Boolean).length;
+        if (r.arabic) ayat++;
+      });
+      return Math.max(1, Math.round(words / 120 + ayat / 3));
+    }
 
     function formatDate(iso) {
       if (!iso) return "";
@@ -214,7 +224,9 @@
       var meta = el("p", { class: "meta" }, [
         el("time", { datetime: k.date, text: formatDate(k.date) }),
         el("span", { class: "dot", text: "·", "aria-hidden": "true" }),
-        k.source_url ? link(k.source_url, k.source, "source") : el("span", { class: "source", text: k.source })
+        k.source_url ? link(k.source_url, k.source, "source") : el("span", { class: "source", text: k.source }),
+        el("span", { class: "dot", text: "·", "aria-hidden": "true" }),
+        el("span", { class: "reading-time", title: "Estimated time to read both languages aloud", text: "~" + readingMinutes(k) + " min (BS + EN)" })
       ]);
 
       var tags = el("div", { class: "chips" });

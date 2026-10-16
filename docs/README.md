@@ -50,7 +50,7 @@ A row with `arabic` renders a full-width, right-aligned Arabic row above its Bos
 - No fabricated hadith or Qur'anic verses. If a citation cannot be verified, omit it.
 - Arabic for every cited verse comes from quran.com or tanzil.net, and links to quran.com.
 - Every hadith names its collection (Bukhari, Muslim, Tirmidhi, ...).
-- Combined delivery under 15 minutes, about 1,800 words total.
+- Keep it short: reading both languages aloud takes 10 to 15 minutes at most (about 1,300 to 1,800 words total). Each card shows its estimated reading time.
 - Emotionally grounded, spiritually reflective, warm flowing prose.
 - No em dashes in khutba text.
 - All sources cited at the bottom with working links.
