@@ -81,6 +81,20 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
 
+  <dialog id="revise" class="revise" aria-labelledby="revise-heading">
+    <form id="revise-form" method="dialog">
+      <h2 id="revise-heading">Revise with Claude</h2>
+      <p id="revise-title" class="revise-khutba"></p>
+      <label for="revise-text">What would you like changed?</label>
+      <textarea id="revise-text" rows="5" placeholder="For example: make the second part shorter, add a dova for the sick, simplify the Bosnian for younger listeners..."></textarea>
+      <p class="hint">This opens a new chat on claude.ai with the khutba and our house style already filled in. You'll need to be signed in to Claude. When you're happy with the result, ask Claude for the updated khutba and send it to whoever maintains this site, or paste it into <code>docs/khutbas.js</code> on GitHub.</p>
+      <div class="dialog-actions">
+        <button type="submit" value="cancel" class="btn btn-outline" formnovalidate>Cancel</button>
+        <button type="submit" value="open" class="btn">Open in Claude</button>
+      </div>
+    </form>
+  </dialog>
+
   <script src="khutbas.js"></script>
   <script>
   (function () {
@@ -198,6 +212,65 @@
       toastTimer = setTimeout(function () { $toast.classList.remove("show"); }, 1600);
     }
 
+    // ---------- print ----------
+    // Prints only the chosen khutba; the print stylesheet hides everything else.
+    function printKhutba(k) {
+      var card = document.getElementById(k.id);
+      document.body.classList.add("print-one");
+      card.classList.add("print-target");
+      window.print();
+    }
+    window.addEventListener("afterprint", function () {
+      document.body.classList.remove("print-one");
+      document.querySelectorAll(".print-target").forEach(function (c) { c.classList.remove("print-target"); });
+    });
+
+    // ---------- revise with Claude ----------
+    var SITE_URL = "https://ademdeniz.github.io/khutba-bank/";
+    var $revise = document.getElementById("revise");
+    var $reviseTitle = document.getElementById("revise-title");
+    var $reviseText = document.getElementById("revise-text");
+    var reviseKhutba = null;
+
+    function openRevise(k) {
+      reviseKhutba = k;
+      $reviseTitle.textContent = k.title_bs + " / " + k.title_en;
+      $reviseText.value = "";
+      $revise.showModal();
+      $reviseText.focus();
+    }
+
+    function revisionPrompt(k, request) {
+      return [
+        "I'd like help revising a khutba from the Khutba Bank of the Bošnjačka Islamska Zajednica Erie.",
+        "",
+        "Khutba: " + k.title_bs + " / " + k.title_en + " (id: \"" + k.id + "\")",
+        "Live page: " + SITE_URL + "#" + k.id,
+        "Data file: " + SITE_URL + "khutbas.js (the object with id \"" + k.id + "\"). I have also copied the full khutba text to my clipboard and can paste it if you can't open the link.",
+        "",
+        "What I'd like changed:",
+        request,
+        "",
+        "Please follow the house style:",
+        "- Bilingual: every row has a Bosnian (bs) and an English (en) cell.",
+        "- No fabricated hadith or Qur'anic verses; omit anything that cannot be verified. Every hadith names its collection.",
+        "- Qur'anic Arabic only from quran.com or tanzil.net, with arabic_ref and an arabic_url pointing to quran.com.",
+        "- Reading both languages aloud takes 10 to 15 minutes at most (about 1,300 to 1,800 words in total).",
+        "- Emotionally grounded, spiritually reflective, warm flowing prose. No em dashes.",
+        "",
+        "First discuss the changes with me. When I'm happy, give me the complete updated khutba object for khutbas.js."
+      ].join("\n");
+    }
+
+    document.getElementById("revise-form").addEventListener("submit", function (e) {
+      if (e.submitter && e.submitter.value === "cancel") return;
+      var request = $reviseText.value.trim();
+      if (!request) { e.preventDefault(); $reviseText.focus(); return; }
+      var k = reviseKhutba;
+      window.open("https://claude.ai/new?q=" + encodeURIComponent(revisionPrompt(k, request)), "_blank", "noopener");
+      copyText(plainText(k, "both")).then(function () { toast("Opened Claude. Khutba text copied too."); }, function () {});
+    });
+
     // ---------- rendering ----------
     function tagChip(tag, active) {
       var b = el("button", { type: "button", class: "chip" + (active ? " active" : ""), "aria-pressed": active ? "true" : "false", text: "#" + tag });
@@ -240,6 +313,12 @@
         });
         actions.appendChild(b);
       });
+      var printBtn = el("button", { type: "button", class: "btn btn-outline", text: "Print" });
+      printBtn.addEventListener("click", function () { printKhutba(k); });
+      var reviseBtn = el("button", { type: "button", class: "btn btn-outline", text: "Revise with Claude" });
+      reviseBtn.addEventListener("click", function () { openRevise(k); });
+      actions.appendChild(printBtn);
+      actions.appendChild(reviseBtn);
 
       var tbody = el("tbody");
       (k.rows || []).forEach(function (r) {

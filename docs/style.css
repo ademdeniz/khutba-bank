@@ -234,7 +234,7 @@ main { padding-top: 28px; padding-bottom: 48px; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 /* ---------- mobile: single column below 768px ---------- */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .card-head { padding: 18px 16px 14px; }
   .khutba-table thead { display: none; }
   .khutba-table, .khutba-table tbody, .khutba-table tr, .khutba-table td { display: block; width: 100%; }
@@ -253,4 +253,64 @@ main { padding-top: 28px; padding-bottom: 48px; }
   .arabic-row td.arabic { padding: 16px; }
   .ayah { font-size: 1.5rem; }
   .card-sources { padding: 14px 16px 18px; }
+}
+
+/* ---------- secondary buttons ---------- */
+.btn-outline { background: transparent; color: var(--green-soft); }
+.btn-outline:hover { background: var(--gold); border-color: var(--gold); color: var(--green); }
+
+/* ---------- revise dialog ---------- */
+.revise {
+  width: min(560px, calc(100vw - 32px));
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 22px 24px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
+.revise::backdrop { background: rgba(10, 25, 15, .55); }
+.revise h2 { margin: 0; font-family: var(--serif); color: var(--green-soft); }
+.revise-khutba { margin: 2px 0 16px; color: var(--muted); font-style: italic; }
+.revise label { display: block; font-weight: 600; margin-bottom: 6px; }
+.revise textarea {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--page);
+  color: var(--text);
+  resize: vertical;
+}
+.revise textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.revise .hint { font-size: .85rem; color: var(--muted); margin: 10px 0 18px; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* ---------- print ---------- */
+@media print {
+  :root {
+    --green-soft: #1a472a; --gold-soft: #f6efd6; --bg: #fff; --surface: #fff; --page: #fff;
+    --text: #000; --muted: #444; --border: #ccc; --row-alt: #fff; --shadow: none;
+  }
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; font-size: 11pt; }
+  .site-header, .controls, .site-footer, .toast, .revise, .actions, .card-head .chips { display: none !important; }
+  main { padding: 0; }
+  .wrap { max-width: none; padding: 0; }
+  .list { display: block; }
+  .card { border: none; box-shadow: none; border-radius: 0; break-after: page; }
+  .card:last-child { break-after: auto; }
+  body.print-one .card:not(.print-target) { display: none; }
+  .card-head { padding: 0 0 10px; }
+  .card-head h2 { color: #1a472a; }
+  .khutba-table th { padding: 6px 8px; }
+  .khutba-table td { padding: 8px; font-size: 11.5pt; line-height: 1.5; }
+  .khutba-table tr { break-inside: avoid; }
+  .arabic-row td.arabic { padding: 10px 8px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ayah { font-size: 18pt; line-height: 1.9; }
+  .card-sources { padding: 12px 0 0; }
+  a { color: #000; text-decoration: none; }
+  .cites a::after { content: " (" attr(href) ")"; font-size: .85em; color: #444; word-break: break-all; }
 }
