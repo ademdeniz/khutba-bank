@@ -100,8 +100,13 @@
   (function () {
     "use strict";
 
+    // Upcoming khutbas first, in delivery order; then past ones, newest first.
+    var TODAY = new Date().toISOString().slice(0, 10);
     var KHUTBAS = (window.KHUTBAS || []).slice().sort(function (a, b) {
-      return (b.date || "").localeCompare(a.date || "");
+      var da = a.date || "", db = b.date || "";
+      var ua = da >= TODAY, ub = db >= TODAY;
+      if (ua !== ub) return ua ? -1 : 1;
+      return ua ? da.localeCompare(db) : db.localeCompare(da);
     });
     var state = { query: "", tag: null };
 
@@ -130,6 +135,7 @@
     }
     function haystack(k) {
       var parts = [k.title_bs, k.title_en, (k.tags || []).join(" ")];
+      if (k.series) parts.push(k.series.name_bs, k.series.name_en);
       (k.rows || []).forEach(function (r) { parts.push(r.bs, r.en, r.arabic_ref); });
       return normalize(parts.join(" \n "));
     }
@@ -301,6 +307,10 @@
         el("span", { class: "dot", text: "·", "aria-hidden": "true" }),
         el("span", { class: "reading-time", title: "Estimated time to read both languages aloud", text: "~" + readingMinutes(k) + " min (BS + EN)" })
       ]);
+      var series = k.series ? el("p", { class: "series" }, [
+        el("span", { class: "series-label", text: "Serija / Series" }),
+        el("span", { text: k.series.name_bs + " / " + k.series.name_en + " · " + k.series.part + " of " + k.series.total })
+      ]) : null;
 
       var tags = el("div", { class: "chips" });
       (k.tags || []).forEach(function (t) { tags.appendChild(tagChip(t, state.tag === t)); });
@@ -351,6 +361,7 @@
         el("header", { class: "card-head" }, [
           el("h2", { lang: "bs", text: k.title_bs }),
           el("p", { class: "title-en", lang: "en", text: k.title_en }),
+          series,
           meta,
           tags,
           actions

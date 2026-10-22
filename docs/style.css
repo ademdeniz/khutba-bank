@@ -314,3 +314,10 @@ main { padding-top: 28px; padding-bottom: 48px; }
   a { color: #000; text-decoration: none; }
   .cites a::after { content: " (" attr(href) ")"; font-size: .85em; color: #444; word-break: break-all; }
 }
+
+/* ---------- series label ---------- */
+.series { margin: 8px 0 0; font-size: .88rem; color: var(--text); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.series-label {
+  font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  background: var(--gold); color: #1a472a; padding: 2px 8px; border-radius: 999px;
+}

@@ -23,10 +23,13 @@ Append an object to `window.KHUTBAS` in `khutbas.js`:
   id: "blagoslov-u-nevolji",          // unique, URL-safe; also the anchor (#blagoslov-u-nevolji)
   title_bs: "Blagoslov u Nevolji",
   title_en: "Blessing in Hardship",
-  date: "2026-10-16",                 // YYYY-MM-DD; newest is shown first
+  date: "2026-10-16",                 // YYYY-MM-DD; upcoming dates show first in delivery order, then past ones newest first
   source: "Original",                 // "Original" or "Adapted"
   source_url: "",                     // direct link to the khutbahbank.org.uk page when adapted
   tags: ["sabr", "tawakkul"],
+  series: {                           // optional: groups khutbas into a numbered series
+    name_bs: "Zajednica i odgovornost", name_en: "Community and Responsibility", part: 1, total: 6
+  },
   references: [                       // optional: hadith and other sources, shown at the bottom
     { label: "Sahih Muslim 2999", url: "https://sunnah.com/muslim:2999" }
   ],
