@@ -264,11 +264,11 @@ window.KHUTBAS = [
       rows: [
         {
           bs: "Elhamdulillah. Hvala Allahu koji je spojio naša srca u vjeri i doveo nas u ovaj grad, daleko od rodnog kraja, ali ne daleko jedne od drugih. Neka su salavat i selam na Muhammeda, Njegovog roba i poslanika, na njegovu porodicu i ashabe.",
-          en: "All praise is due to Allah, who joined our hearts in faith and brought us to this city, far from the land of our birth, yet not far from one another. May peace and blessings be upon Muhammad, His servant and messenger, upon his family and his companions."
+          en: "All praise is due to Allah, who joined our hearts in faith and gathered us in this city from many lands and many paths, so that we may be close to one another. May peace and blessings be upon Muhammad, His servant and messenger, upon his family and his companions."
         },
         {
           bs: "Draga braćo i sestre, sjetite se prvih dana našeg džemata u Erieu. Klanjali smo u iznajmljenim prostorijama. Neko je donio ćilime, neko je kuhao, neko je popravljao, neko je skupljao novac od vrata do vrata. Niko nije imao mnogo, ali svako je donio nešto. Tako je nastalo ovo što danas imamo.",
-          en: "Dear brothers and sisters, remember the first days of our jamaat in Erie. We prayed in rented rooms. Someone brought carpets, someone cooked, someone fixed things, someone collected money door to door. No one had much, but everyone brought something. That is how what we have today came to be."
+          en: "Dear brothers and sisters, look around this masjid. Some of us came from Bosnia, some from other countries far away, some were born right here, and some found Islam later in life. This community began in rented rooms. Someone brought carpets, someone cooked, someone fixed things, someone collected money door to door. No one had much, but everyone brought something. Whether you were here on that first day or walked through these doors for the first time last week, what we have today belongs to you too."
         },
         {
           arabic: "إِنَّمَا ٱلْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا۟ بَيْنَ أَخَوَيْكُمْ ۚ وَٱتَّقُوا۟ ٱللَّهَ لَعَلَّكُمْ تُرْحَمُونَ",
@@ -283,7 +283,7 @@ window.KHUTBAS = [
         },
         {
           bs: "Poslanik, sallallahu alejhi ve sellem, je rekao: \"Primjer vjernika u njihovoj međusobnoj ljubavi, milosti i saosjećanju je kao primjer jednog tijela. Kada jedan dio oboli, cijelo tijelo bdije i gori u groznici.\" (Muslim) Kada boli jednog od nas, treba da boli sve nas.",
-          en: "The Prophet, peace and blessings be upon him, said: \"The example of the believers in their love, mercy and compassion for one another is that of one body. When one part of it aches, the whole body stays awake with fever.\" (Muslim) When one of us hurts, all of us should feel it."
+          en: "The Prophet, peace and blessings be upon him, said: \"The example of the believers in their love, mercy and compassion for one another is that of one body. When one part of it aches, the whole body stays awake with fever.\" (Muslim) The Prophet did not say one nation, one language, or one people. He said one body. When one of us hurts, all of us should feel it, whatever country we come from."
         },
         {
           bs: "Poslanik je također rekao: \"Vjernik je vjerniku kao građevina, jedan dio drugi učvršćuje\", i pritom je isprepleo prste svojih ruku. (Buhari) Zamislite gomilu cigli koje leže razbacane po zemlji. To nije zid. Te iste cigle, kada se slože jedna uz drugu, postaju kuća koja stoji generacijama.",
@@ -295,15 +295,15 @@ window.KHUTBAS = [
         },
         {
           bs: "I znajte da pomaganje drugima nije gubitak. Poslanik, sallallahu alejhi ve sellem, je rekao: \"Allah pomaže Svome robu sve dok rob pomaže svome bratu.\" (Muslim) Kada nosiš teret svog džemata, Allah nosi tvoj teret.",
-          en: "And know that helping others is never a loss. The Prophet, peace and blessings be upon him, said: \"Allah is in the aid of His servant as long as the servant is in the aid of his brother.\" (Muslim) When you carry your jamaat's burden, Allah carries yours."
+          en: "And know that helping others is never a loss. The Prophet, peace and blessings be upon him, said: \"Allah is in the aid of His servant as long as the servant is in the aid of his brother.\" (Muslim) When you carry your community's burden, Allah carries yours."
         },
         {
           bs: "Braćo i sestre, budimo cigle koje drže jedna drugu. Ne cigle koje stoje sa strane i gledaju kako drugi grade. Uskoro ćemo birati novi odbor, ali džemat nije samo odbor. Džemat smo svi mi. Neka svako nađe svoje mjesto u ovom zidu.",
-          en: "Brothers and sisters, let us be bricks that hold one another up. Not bricks that stand to the side and watch others build. Soon we will elect a new board, but the jamaat is not just the board. The jamaat is all of us. Let each person find their place in this wall."
+          en: "Brothers and sisters, let us be bricks that hold one another up. Not bricks that stand to the side and watch others build. Soon our community will elect a new board, but the community is not just the board. It is all of us, whatever language we make our du'a in. If you are new here, or you feel this masjid is not quite yours yet, come closer. There is a place in this wall for you."
         },
         {
           bs: "Allahu naš, spoji naša srca, popravi odnose među nama i učini nas jednim tijelom u ljubavi i milosti. Blagoslovi ruke koje grade ovaj džemat i ne daj da se raziđemo. Amin.",
-          en: "O Allah, join our hearts, mend what is between us, and make us one body in love and mercy. Bless the hands that build this jamaat, and do not let us drift apart. Ameen."
+          en: "O Allah, join our hearts, mend what is between us, and make us one body in love and mercy. Bless the hands that build this community, and do not let us drift apart. Ameen."
         }
       ]
     },
