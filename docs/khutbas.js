@@ -566,26 +566,25 @@ window.KHUTBAS.push({
   source_url: "",
   tags: ["tawakkul", "shukr", "iman", "inshaallah"],
   references: [
-    { label: "Sahih Muslim 2664", url: "https://sunnah.com/muslim:2664" },
     { label: "Jami` at-Tirmidhi 2517", url: "https://sunnah.com/tirmidhi:2517" },
     { label: "Sahih Muslim 223", url: "https://sunnah.com/muslim:223" }
   ],
   rows: [
       {
-        bs: "Elhamdulillah, hvala Allahu, Gospodaru svjetova, čijom se voljom sve dešava i kome pripada zahvala za svaki ishod. Neka su salavat i selam na našeg Poslanika Muhammeda, na njegovu porodicu i na sve njegove ashabe.",
-        en: "All praise is due to Allah, Lord of the worlds, by whose will everything comes to pass and to whom thanks are due for every outcome. May peace and blessings be upon our Prophet Muhammad, upon his family, and upon all of his companions."
+        bs: "Elhamdulillah, hvala Allahu čijom se voljom sve dešava. Neka su salavat i selam na našeg Poslanika Muhammeda, na njegovu porodicu i ashabe.",
+        en: "All praise is due to Allah, by whose will everything comes to pass. May peace and blessings be upon our Prophet Muhammad, upon his family and his companions."
       },
       {
-        bs: "Draga braćo i sestre, ovih dana mnogo se govori o pobjedi Abdula El-Sayeda u Michiganu. Ljudi su prepoznali njegove jasne govore, skladan porodični život, dugogodišnje školovanje i akademske uspjehe, društveni angažman njega i njegove supruge dr. Sarah, i iskren odnos prema sugrađanima s kojima dijeli svakodnevnicu. Prepoznali su i njegove široke grudi, nježno srce i otvoren um prema američkim različitostima. Tokom cijele kampanje nije skrivao ni svoje muslimansko ni egipatsko porijeklo. Ponosio se njime i branio ga, ne pomjerajući se ni pedlja nazad.",
-        en: "Dear brothers and sisters, these days there is much talk about the victory of Abdul El-Sayed in Michigan. People recognized his clear speeches, his harmonious family life, his long years of study and academic achievement, the community service of both him and his wife, Dr. Sarah, and his sincere way with the neighbors whose daily lives he shares. They also recognized his open heart, his gentle spirit and his open mind toward the diversity of America. Throughout his whole campaign he never hid his Muslim faith or his Egyptian roots. He was proud of them and defended them, without stepping back an inch."
+        bs: "Draga braćo i sestre, ovih dana mnogo se govori o pobjedi Abdula El-Sayeda u Michiganu. Ljudi su prepoznali njegove jasne govore, skladan porodični život, akademske uspjehe i društveni angažman njega i njegove supruge dr. Sarah. Prepoznali su njegove široke grudi, nježno srce i otvoren um. Svoje muslimansko i egipatsko porijeklo nije skrivao, nego ga je ponosno branio, ne pomjerajući se ni pedlja nazad.",
+        en: "Dear brothers and sisters, these days there is much talk about the victory of Abdul El-Sayed in Michigan. People recognized his clear speeches, his harmonious family life, his academic achievements, and the community service of both him and his wife, Dr. Sarah. They recognized his open heart, his gentle spirit and his open mind. He never hid his Muslim faith or his Egyptian roots. He defended them with pride, without stepping back an inch."
       },
       {
-        bs: "Ne govorim vam danas o politici. Neki od vas su možda glasali drugačije, i to je vaše pravo. Ovaj minber nije mjesto za stranke. Ali u ovoj priči postoji pouka koja pripada svakom muslimanu, i o njoj želim da govorimo.",
-        en: "I am not speaking to you about politics today. Some of you may have voted differently, and that is your right. This minbar is not a place for parties. But there is a lesson in this story that belongs to every Muslim, and that is what I want us to talk about."
+        bs: "Ne govorim danas o politici. Neki od vas su možda glasali drugačije, i to je vaše pravo. Ovaj minber nije mjesto za stranke. Ali u ovoj priči ima pouka za svakog muslimana.",
+        en: "I am not speaking about politics today. Some of you may have voted differently, and that is your right. This minbar is not a place for parties. But there is a lesson in this story for every Muslim."
       },
       {
-        bs: "Kada su ga napadali, Abdul nije odgovarao uvredom. U jedan sat iza ponoći, nakon objave rezultata, jednom od svojih najglasnijih kritičara obratio se riječju \"habibi\", dragi moj. Ta jedna riječ obišla je medije i društvene mreže i oduševila naročito mlade. A to je, braćo i sestre, ahlak kojem nas uči Kur'an.",
-        en: "When he was attacked, Abdul did not answer with insults. At one o'clock in the morning, after the results were announced, he addressed one of his loudest critics with the word \"habibi\", my dear. That one word went around the media and social networks and delighted young people especially. And that, brothers and sisters, is the character the Qur'an teaches us."
+        bs: "Kada su ga napadali, Abdul nije odgovarao uvredom. Nakon objave rezultata, jednom od svojih najglasnijih kritičara obratio se riječju \"habibi\", dragi moj. To je ahlak kojem nas uči Kur'an.",
+        en: "When he was attacked, Abdul did not answer with insults. After the results were announced, he addressed one of his loudest critics as \"habibi\", my dear. That is the character the Qur'an teaches us."
       },
       {
         arabic: "وَلَا تَسْتَوِى ٱلْحَسَنَةُ وَلَا ٱلسَّيِّئَةُ ۚ ٱدْفَعْ بِٱلَّتِى هِىَ أَحْسَنُ فَإِذَا ٱلَّذِى بَيْنَكَ وَبَيْنَهُۥ عَدَٰوَةٌ كَأَنَّهُۥ وَلِىٌّ حَمِيمٌ",
@@ -595,12 +594,8 @@ window.KHUTBAS.push({
         en: "Allah, exalted is He, says: \"And not equal are the good deed and the bad. Repel evil by that which is better, and thereupon the one between whom and you is enmity will become as though he was a devoted friend.\""
       },
       {
-        bs: "Ali ono što je mene najviše dirnulo jeste nešto drugo. Abdul je kroz cijelu kampanju stalno govorio \"inšallah\", ako Bog da. Kada je u pobjedničkom govoru pred ogromnom publikom rekao da sa \"inšallah\" sada prelaze na nešto drugo, publika mu je gromoglasno uzvratila: \"Elhamdulillah!\" Hvala Allahu. Bio je to trenutak koji je i njega samoga iznenadio, pa se od srca nasmijao.",
-        en: "But what moved me most was something else. Throughout his campaign Abdul kept saying \"inshaAllah\", if God wills. When, in his victory speech before a huge crowd, he told them they were now moving on from \"inshaAllah\", the crowd thundered back: \"Alhamdulillah!\" All praise is due to Allah. It was a moment that surprised even him, and he laughed from the heart."
-      },
-      {
-        bs: "Zamislite to. Ljudi različitih vjera i porijekla naučili su dvije riječi koje su temelj života jednog muslimana. A mi, koji ih izgovaramo od djetinjstva, trebamo se zapitati: znamo li šta one zaista znače?",
-        en: "Imagine that. People of many faiths and backgrounds learned two words that lie at the foundation of a Muslim's life. And we, who have said them since childhood, should ask ourselves: do we truly know what they mean?"
+        bs: "Kroz cijelu kampanju Abdul je govorio \"inšallah\", ako Bog da. A u pobjedničkom govoru, kada je rekao da sa \"inšallah\" sada prelaze na nešto drugo, ogromna publika mu je gromoglasno uzvratila: \"Elhamdulillah!\" Iznenađen, nasmijao se od srca. Ljudi različitih vjera naučili su dvije riječi koje su temelj života muslimana. A mi, koji ih izgovaramo od djetinjstva, znamo li šta one zaista znače?",
+        en: "Throughout his campaign Abdul kept saying \"inshaAllah\", if God wills. And in his victory speech, when he told the huge crowd they were now moving on from \"inshaAllah\", they thundered back: \"Alhamdulillah!\" Surprised, he laughed from the heart. People of many faiths learned two words that lie at the foundation of a Muslim's life. And we, who have said them since childhood, do we truly know what they mean?"
       },
       {
         arabic: "وَلَا تَقُولَنَّ لِشَا۟ىْءٍ إِنِّى فَاعِلٌ ذَٰلِكَ غَدًا ﴿٢٣﴾ إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ وَٱذْكُر رَّبَّكَ إِذَا نَسِيتَ وَقُلْ عَسَىٰٓ أَن يَهْدِيَنِ رَبِّى لِأَقْرَبَ مِنْ هَـٰذَا رَشَدًا ﴿٢٤﴾",
@@ -610,20 +605,12 @@ window.KHUTBAS.push({
         en: "Allah, exalted is He, says: \"And never say of anything, 'Indeed, I will do that tomorrow,' except when adding, 'If Allah wills.' And remember your Lord when you forget and say, 'Perhaps my Lord will guide me to what is nearer than this to right conduct.'\""
       },
       {
-        bs: "Inšallah nije izgovor. Nije riječ kojom kažemo \"vjerovatno neću\" ili kojom odgađamo obavezu. Inšallah je obećanje koje dajemo s punom ozbiljnošću, znajući da konačni ishod nije u našim rukama. Abdul je decenijama učio i radio na najboljim univerzitetima, pa je ipak govorio \"inšallah\". To je pravo inšallah: sav trud koji imaš, i srce predano Allahu.",
-        en: "InshaAllah is not an excuse. It is not a word we use to mean \"probably not\", or to put off a duty. InshaAllah is a promise we make in full seriousness, knowing that the final outcome is not in our hands. Abdul spent decades studying and working at some of the finest universities, and still he said \"inshaAllah\". That is the true inshaAllah: all the effort you have, and a heart surrendered to Allah."
+        bs: "Inšallah nije izgovor za odgađanje. To je obećanje dato ozbiljno, uz svijest da ishod nije u našim rukama. Abdul je decenijama učio i radio, pa je ipak govorio \"inšallah\". Jedan čovjek je upitao Poslanika da li da sveže svoju devu i osloni se na Allaha, ili da je ostavi nevezanu i osloni se na Allaha. Poslanik je odgovorio: \"Sveži je, i osloni se na Allaha.\" (Tirmizi) To je tevekkul: uradiš sve što je do tebe, a ishod prepustiš Allahu.",
+        en: "InshaAllah is not an excuse to put things off. It is a promise made in earnest, knowing that the outcome is not in our hands. Abdul spent decades studying and working, and still he said \"inshaAllah\". A man asked the Prophet whether he should tie his camel and rely on Allah, or leave it untied and rely on Allah. The Prophet answered: \"Tie it, and rely on Allah.\" (Tirmidhi) That is tawakkul: you do everything that is yours to do, and leave the outcome to Allah."
       },
       {
-        bs: "Poslanik, sallallahu alejhi ve sellem, je rekao: \"Jak vjernik je bolji i Allahu draži od slabog vjernika, a u obojici ima dobra. Teži onome što ti koristi, traži pomoć od Allaha i nemoj klonuti. A ako te nešto pogodi, nemoj reći: 'Da sam uradio to i to, bilo bi tako i tako', nego reci: 'Allah je odredio i učinio je ono što je htio.'\" (Muslim)",
-        en: "The Prophet, peace and blessings be upon him, said: \"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both. Strive for what benefits you, seek help from Allah, and do not lose heart. If something befalls you, do not say, 'If only I had done such and such,' but say, 'Allah decreed, and He did what He willed.'\" (Muslim)"
-      },
-      {
-        bs: "Jedan čovjek je upitao Poslanika da li da sveže svoju devu i osloni se na Allaha, ili da je ostavi nevezanu i osloni se na Allaha. Poslanik mu je odgovorio: \"Sveži je, i osloni se na Allaha.\" (Tirmizi) To je tevekkul: uradiš sve što je do tebe, a ishod prepustiš Onome kome sve pripada.",
-        en: "A man asked the Prophet whether he should tie his camel and rely on Allah, or leave it untied and rely on Allah. The Prophet answered: \"Tie it, and rely on Allah.\" (Tirmidhi) That is tawakkul: you do everything that is yours to do, and you leave the outcome to the One to whom everything belongs."
-      },
-      {
-        bs: "A kada dođe ishod, dolazi i druga riječ: elhamdulillah. Kada su Abdulov kvalitet prepoznali i iza njega stali milioni ljudi, on nije rekao \"ja sam uspio\". Rekao je elhamdulillah.",
-        en: "And when the outcome arrives, so does the second word: alhamdulillah. When millions of people recognized Abdul's quality and stood behind him, he did not say \"I did it\". He said alhamdulillah."
+        bs: "A kada dođe ishod, dolazi i druga riječ. Kada su milioni ljudi stali iza Abdula, on nije rekao \"ja sam uspio\". Rekao je elhamdulillah.",
+        en: "And when the outcome arrives, so does the second word. When millions of people stood behind Abdul, he did not say \"I did it\". He said alhamdulillah."
       },
       {
         arabic: "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌ",
@@ -633,20 +620,16 @@ window.KHUTBAS.push({
         en: "Allah, exalted is He, says: \"And remember when your Lord proclaimed, 'If you are grateful, I will surely increase you; but if you deny, indeed, My punishment is severe.'\""
       },
       {
-        bs: "Poslanik, sallallahu alejhi ve sellem, je rekao: \"Elhamdulillah ispunjava vagu.\" (Muslim) Jedna riječ, izgovorena iskreno, ispunjava vagu dobrih djela.",
-        en: "The Prophet, peace and blessings be upon him, said: \"Alhamdulillah fills the scale.\" (Muslim) One word, said sincerely, fills the scale of good deeds."
+        bs: "Poslanik, sallallahu alejhi ve sellem, je rekao: \"Elhamdulillah ispunjava vagu.\" (Muslim) Ali da bi inšallah i elhamdulillah imali težinu, iza njih moraju stajati iman, znanje, ahlak i ustrajnost. Bez truda, inšallah je prazna riječ. Bez skromnosti, uspjeh postaje oholost. A s imanom, i trud i uspjeh postaju ibadet.",
+        en: "The Prophet, peace and blessings be upon him, said: \"Alhamdulillah fills the scale.\" (Muslim) But for inshaAllah and alhamdulillah to carry weight, there must be faith, knowledge, good character and perseverance behind them. Without effort, inshaAllah is an empty word. Without humility, success becomes arrogance. But with iman, both the effort and the success become worship."
       },
       {
-        bs: "Braćo i sestre, ova priča nas uči jednoj vrlo važnoj lekciji. Da bi riječi \"inšallah\" i \"elhamdulillah\" imale težinu, iza njih moraju stajati iman, znanje i ahlak, i na kraju ustrajnost i tevekkul. Bez truda, inšallah postaje prazna riječ. Bez skromnosti, uspjeh postaje oholost. A s imanom, i trud i uspjeh postaju ibadet.",
-        en: "Brothers and sisters, this story teaches us a very important lesson. For the words \"inshaAllah\" and \"alhamdulillah\" to carry weight, there must be faith, knowledge and good character behind them, and finally perseverance and trust in Allah. Without effort, inshaAllah becomes an empty word. Without humility, success becomes arrogance. But with iman, both the effort and the success become worship."
+        bs: "Neka i naša djeca uče, rade i grade, i neka ove dvije riječi nose s ponosom, u školi, na poslu i među komšijama. Kakvu nam je lekciju Abdul održao, vjerujte, to ćemo još godinama izučavati.",
+        en: "May our children also study, work and build, and carry these two words with pride, at school, at work and among their neighbors. Believe me, the lesson Abdul gave us is one we will be studying for years."
       },
       {
-        bs: "Neka i naša djeca uče, rade i grade, i neka nikada ne zaborave odakle dolaze i kome pripadaju. Neka u školi, na poslu i među komšijama nose ove dvije riječi s ponosom, kao što ih je nosio Abdul. Kakvu nam je lekciju Abdul održao, vjerujte, to ćemo još godinama izučavati.",
-        en: "May our children also study, work and build, and may they never forget where they come from and to whom they belong. May they carry these two words with pride at school, at work and among their neighbors, just as Abdul carried them. Believe me, the lesson Abdul gave us is one we will be studying for years."
-      },
-      {
-        bs: "Allahu naš, daj nam snage da uradimo sve što je do nas, a srca nam smiri u onome što si Ti odredio. Učini nas od onih koji iskreno kažu inšallah prije svakog djela i elhamdulillah poslije njega. Amin.",
-        en: "O Allah, give us the strength to do all that is ours to do, and give our hearts peace in what You have decreed. Make us among those who sincerely say inshaAllah before every deed and alhamdulillah after it. Ameen."
+        bs: "Allahu naš, daj nam snage da uradimo ono što je do nas, i smiri nam srca u onome što si Ti odredio. Učini nas od onih koji iskreno kažu inšallah prije svakog djela i elhamdulillah poslije njega. Amin.",
+        en: "O Allah, give us the strength to do what is ours to do, and give our hearts peace in what You have decreed. Make us among those who sincerely say inshaAllah before every deed and alhamdulillah after it. Ameen."
       }
   ]
 });
