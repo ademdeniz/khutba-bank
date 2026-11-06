@@ -328,7 +328,7 @@ window.KHUTBAS = [
         },
         {
           bs: "Draga braćo i sestre, danas ću govoriti otvoreno. Za nekoliko sedmica imamo izbore za odbor džemata. I svaki put je ista priča: teško je naći ljude. Svi imamo mišljenje kako bi džemat trebao raditi, ali malo nas želi nositi teret. A neko ga mora nositi.",
-          en: "Dear brothers and sisters, today I will speak plainly. In a few weeks we have elections for the jamaat board. And every time it is the same story: it is hard to find people. We all have opinions about how the jamaat should be run, but few of us want to carry the load. And someone has to carry it."
+          en: "Dear brothers and sisters, today I will speak plainly. In a few weeks this community will elect its board. And every time it is the same story: it is hard to find people. We all have opinions about how a masjid should be run, but few of us want to carry the load. And someone has to carry it. Some of you are newer here, some are visiting, and some of you pray with us without being members. This message is for you too, because every masjid, this one included, needs people who will carry it."
         },
         {
           arabic: "وَٱلْعَصْرِ ﴿١﴾ إِنَّ ٱلْإِنسَـٰنَ لَفِى خُسْرٍ ﴿٢﴾ إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ ﴿٣﴾",
@@ -351,15 +351,15 @@ window.KHUTBAS = [
         },
         {
           bs: "Neko će reći: nisam dovoljno dobar, nisam dovoljno pametan, nemam iskustva. Braćo i sestre, nijedan kandidat ne dolazi sa savršenim certifikatom. Ni ljudi koji su do sada vodili ovaj džemat nisu bili savršeni. Bili su ljudi koji su rekli: ako ne ja, ko? Nemojte čekati da postanete savršeni da biste pomogli.",
-          en: "Someone will say: I am not good enough, I am not clever enough, I have no experience. Brothers and sisters, no candidate comes with a perfect certificate. The people who have led this jamaat until now were not perfect either. They were people who said: if not me, then who? Do not wait to become perfect before you help."
+          en: "Someone will say: I am not good enough, I am not clever enough, I have no experience. Brothers and sisters, no candidate comes with a perfect certificate. The people who have led this community until now were not perfect either. They were people who said: if not me, then who? Do not wait to become perfect before you help."
         },
         {
           bs: "Zato vas molim konkretno. Ako vas neko pozove da se kandidujete, a imate vremena i snage, nemojte odmah reći ne. Razmislite i klanjajte istiharu. Ako ne možete biti u odboru, budite u nekom od timova: za mekteb, za omladinu, za održavanje, za događaje. I dođite na izbornu skupštinu. Vaš glas je dio vaše odgovornosti.",
-          en: "So I ask you something specific. If someone asks you to stand for the board, and you have the time and strength, do not say no straight away. Think about it and pray istikhara. If you cannot serve on the board, serve on one of the teams: the weekend school, the youth, maintenance, events. And come to the election meeting. Your vote is part of your responsibility."
+          en: "So I ask you something specific. If you are a member and someone asks you to stand for the board, and you have the time and strength, do not say no straight away. Think about it and pray istikhara. And come to the election meeting, because your vote is part of your responsibility. If you are not a member, you can still step onto the field. Serve on one of the teams: the weekend school, the youth, maintenance, events. You do not need a membership card to serve the house of Allah. And if you would like to become a member, speak to any of us after the prayer."
         },
         {
           bs: "Ako mi ne nosimo ovaj džemat, ko će? Naši očevi su ga podigli od ničega. Ako ga mi pustimo, naša djeca će naslijediti praznu zgradu. Ako ga ponesemo, naslijedit će živu zajednicu. Izbor je naš.",
-          en: "If we do not carry this jamaat, who will? Our fathers built it from nothing. If we let it go, our children will inherit an empty building. If we carry it, they will inherit a living community. The choice is ours."
+          en: "If we do not carry this masjid, who will? Those who came before us built it from nothing, and now it is in our hands, whether we have been here for thirty years or thirty days. If we let it go, our children will inherit an empty building. If we carry it, they will inherit a living community. The choice is ours."
         },
         {
           bs: "Allahu naš, ne daj da budemo od onih koji samo gledaju. Daj nam snage da nosimo odgovornost, iskrenosti da je nosimo radi Tebe, i strpljenja jedni s drugima. Amin.",
